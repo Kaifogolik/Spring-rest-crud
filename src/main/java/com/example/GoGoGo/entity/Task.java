@@ -1,4 +1,4 @@
-package com.example.GoGoGo;
+package com.example.GoGoGo.entity;
 
 
 import jakarta.persistence.Entity;

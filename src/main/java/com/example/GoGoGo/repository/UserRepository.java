@@ -1,15 +1,13 @@
 package com.example.GoGoGo.repository;
 
-
-import com.example.GoGoGo.entity.Task;
+import com.example.GoGoGo.entity.User;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface TaskRepository extends ListCrudRepository<Task, Long> {
+public interface UserRepository extends ListCrudRepository<User, Long> {
 
-
-    Optional<Task> findByName(String name);
+    Optional<User> findByName(String name);
 }
