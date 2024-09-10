@@ -3,6 +3,7 @@ package com.example.GoGoGo.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Task {
@@ -10,6 +11,17 @@ public class Task {
     @Id
     private long id;
     private String name;
+
+    @ManyToOne
+    public TUser tUser;
+
+    public TUser getTUser() {
+        return tUser;
+    }
+
+    public void setTUser(TUser user) {
+        this.tUser = user;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -27,4 +39,5 @@ public class Task {
     public void setName(String name) {
         this.name = name;
     }
+
 }

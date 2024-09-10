@@ -37,12 +37,12 @@ public class TaskController {
 
 
     @PostMapping
-    public Task save(Task task) {
+    public Task save(@RequestBody Task task) {
         return taskRepository.save(task);
     }
 
-    @DeleteMapping
-    public void deleteTask(long id) {
+    @DeleteMapping("/{id}")
+    public void deleteTask(@PathVariable long id) {
 
         taskRepository.deleteById(id);
     }
