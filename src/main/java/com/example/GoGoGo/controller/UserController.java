@@ -1,6 +1,7 @@
 package com.example.GoGoGo.controller;
 
 
+import com.example.GoGoGo.dto.TUserDto;
 import com.example.GoGoGo.entity.TUser;
 import com.example.GoGoGo.repository.UserRepository;
 import com.example.GoGoGo.service.UserService;
@@ -19,26 +20,26 @@ public class UserController {
     private UserRepository userRepository;
 
     @GetMapping("/")
-    public List<TUser> getAllUsers() {
+    public List<TUserDto> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @GetMapping("/{id}")
-    public TUser getUserById(@PathVariable long id) {
-        return userRepository.findById(id).get();
+    public TUserDto getUserById(@PathVariable long id) {
+        return userService.getUserById(id);
     }
     @PostMapping
-    public TUser createUser(@RequestBody TUser user) {
-        return userRepository.save(user);
+    public TUserDto createUser(@RequestBody TUserDto user) {
+        return userService.creatUser(user);
     }
 
-//    @GetMapping
-//    public User getByName(@RequestParam String name) {
-//        return userRepository.findByName(name).get();
-//    }
+    @GetMapping
+    public TUserDto getByName(@RequestParam String name) {
+        return userService.getUserName(name);
+    }
 
     @DeleteMapping("/{id}")
     public void deleteUserById(@PathVariable long id) {
-        userRepository.deleteById(id);
+        userService.deleteUserById(id);
     }
 }

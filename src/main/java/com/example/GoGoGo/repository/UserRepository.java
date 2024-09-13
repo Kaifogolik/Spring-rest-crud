@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface UserRepository extends ListCrudRepository<TUser, Long> {
 
     Optional<TUser> findByName(String name);
+    Optional<TUser> findById(long id);
 }

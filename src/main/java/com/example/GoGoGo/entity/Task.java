@@ -13,6 +13,17 @@ public class Task {
     private String name;
 
     @ManyToOne
+    public Event event;
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    @ManyToOne
     public TUser tUser;
 
     public TUser getTUser() {
